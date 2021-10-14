@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Form(props) {
-    const { user, update, submit } = props;
+    const { user, update, submit, errors } = props;
 
     const onChange = evt => {
         const { name, value, type, checked } = evt.target;
@@ -16,6 +16,13 @@ export default function Form(props) {
 
     return (
         <form onSubmit={onSubmit}>
+            <div>
+                <div>{errors.fname}</div>
+                <div>{errors.lname}</div>
+                <div>{errors.email}</div>
+                <div>{errors.password}</div>
+                <div>{errors.agree}</div>
+            </div>
             <label>First Name
                 <input
                     type='text' 
